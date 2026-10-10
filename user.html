@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SDI College | Official Website</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #292727;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: #082567;
+            color: white;
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ffd700;
+        }
+        nav{
+            height:80px;
+            align-items:center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin-top:40px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f8d405;
+        }
+        .login-menu {
+            position: relative;
+            display: inline-block;
+        }
+
+        .login-btn {
+            background-color: #082567;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 180px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .dropdown a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .dropdown a:hover {
+            background-color: #fbfcf1;
+        }
+
+        .login-menu:hover .dropdown {
+            display: block;
+        }
+   
+
+         /* Hero */
+        .hero {
+            min-height: 550px;
+            background:
+                linear-gradient(rgba(0, 30, 80, 0.75), rgba(0, 30, 80, 0.75)),
+                url("https://images.unsplash.com/photo-1574542303384-d07d589af2cd?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        .hero-content h1 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 21px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #ffd700;
+            color: #082567;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-2px);
+            color:black;
+        }
+
+        /* Common Section */
+        section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #082567;
+            font-size: 50px;
+            margin-bottom: 40px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .contact-box h3 {
+            color: #082567;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #061a45;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        footer h2 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .social {
+            margin: 15px 0;
+        }
+
+        .social a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .social a:hover {
+            color: #ffd700;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .course-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .facility-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .faculty-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .course-container,
+            .facility-container,
+            .faculty-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 450px;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-content p {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 50px 5%;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+        
+    
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            SDI <span>COLLEGE</span> Bhadohi
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li>   <div class="login-menu">
+
+        <button class="login-btn">Login ▼</button>
+
+        <div class="dropdown">
+            <a href="student_login.html">Student Login</a>
+            <a href="admin-login.html">Admin Login</a>
+        </div>
+     </div>
+    </li>
+                <li><a href="student_register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to Sita Devi intermediate College <br>Jairampur,Bhadohi</h1>
+
+            <p>
+                Education • Excellence • Innovation
+            </p>
+
+            <a href="./student.html" class="btn">Apply Now</a>
+        </div>
+    </section>
+<!-- Contact Section -->
+    <section id="contact">
+
+        <h2 class="section-title">Contact Us</h2>
+
+        <div class="contact-container">
+
+            <div class="contact-box">
+                <h3>📍 Address</h3>
+                <p>
+                    SDI College Road,<br>
+                    Jairampur, Bhadohi, Uttar Pradesh
+                </p>
+            </div>
+
+            <div class="contact-box">
+                <h3>📞 Phone</h3>
+                <p>
+                    +91 0000000000
+                </p>
+            </div>
+
+            <div class="contact-box">
+                <h3>📧 Email</h3>
+                <p>
+                    info@SDIcollege.edu
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h2>SDI COLLEGE</h2>
+
+        <p>
+            Empowering Students Through Quality Education
+        </p>
+
+        <div class="social">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+            <a href="#">LinkedIn</a>
+        </div>
+
+        <p>
+            © 2026 SDI College. All Rights Reserved. Developed by <b>Pradeep maurya</b>
+        </p>
+
+    </footer>
+
+
+   
+</body>
+</html>
