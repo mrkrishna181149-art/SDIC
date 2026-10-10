@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+<style>
+    *{
+        background:rgb(6, 94, 142);
+        padding:0px;
+        margin:0px;
+        box-sizing:border-box;
+    }
+    body{
+    justify-content:center;
+    align-items:center;
+    display:flex;
+    }
+    
+
+#register{
+   position:relative;
+    width:400px;
+    height:500px;
+    margin-top:20px;
+    padding:40px;
+    background:rgba(47, 124, 201, 0.08);
+    backdrop-filter:blur(15px);
+    border: 1px solid rgba(11, 74, 151, 0.2);
+    border-radius:20px;
+    box-shadow:0 0 80px rgba(54, 193, 228, 0.4);
+    animation:slideIn 1s ease;
+    z-index:1;
+    }
+    @keyframes slideIn{
+    from{
+        opacity:0;
+        transform:translateY(80px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0px);
+    }
+}
+#register h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:white;
+}
+div{
+    position:relative;
+    margin-bottom:15px;
+}
+div input{
+    width:100%;
+    padding:15px;
+    background:transparent;
+    border:2px solid rgba(255,255,255,0.3);
+    border-radius:10px;
+    color:white;
+    outline:none;
+    transition:0.3s;
+}
+div input:focus{
+    border-color:#38bdf8;
+    box-shadow:0 0 15px #38bdf8;
+}
+div label{
+ position:absolute;
+    left:15px;
+    top:15px;
+    color:#ccc;
+    pointer-events:none;
+    transition:0.3s;
+}
+div input:focus~label,
+div input:valid~label{
+    top:-10px;
+    left:10px;
+    font-size:12px;
+    background:#0c1730;
+    padding:0 5px;
+}
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(45deg,#38bdf8,#6366f1);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px #38bdf8;
+}
+.login{
+    text-align:center;
+    margin-top:5px;
+}
+a{
+    color:#38bdf8;
+    text-decoration:none;
+    text-align:center;
+}
+
+a:hover{
+    text-decoration:underline;
+    cursor:pointer;
+    font-size:20px;
+}
+</style>
+</head>
+<body>
+    
+    <div id="register">
+        <h2>Register account</h2>
+        <form>
+            <div>
+                <input type="email" required>
+                <label>Email or mobile no.</label>
+            </div>
+            <div>
+                <input type="username" required>
+                <label>Username</label>
+            </div>
+            <div>
+                <input type="password" required>
+                <label>Password</label>
+            </div>
+            <div>
+                <input type="re-type password" required>
+                <label>Re-type password</label>
+            </div>
+            <button>Register</button>
+            <div class="login">
+                <p>Alredy I have a account</p>
+                <a href="#">Login</a>
+            </div>
+                
+        </form>
+    </div>
+</body>
+</html>
